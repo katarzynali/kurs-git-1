@@ -9,6 +9,8 @@ def utworz_nowe_id(zadania:str):                  #Tworzy nową funkcje o nazwie
                                                   #ID = ...: Przypisuje ten wynik do zmiennej ID.
                                                   #Nowe ID będzie równe liczbie elementów na liście plus jeden. Na przykład, jeśli na liście są 3 zadania, nowe ID będzie wynosić 3 + 1 = 4.
 
+
+
 def dodaj_zadanie(zadania:str, nazwa:str, osoba:str):         #Tworzy nową funkcje o nazwie dodaj_zadanie
     zad_id = utworz_nowe_id(zadania)                          #Funkcja ta dostaje listę zadania, żeby sprawdzić, jakie numery są już zajęte.
 
