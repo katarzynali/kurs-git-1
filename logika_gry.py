@@ -1,107 +1,35 @@
-{
-  "nbformat": 4,
-  "nbformat_minor": 0,
-  "metadata": {
-    "colab": {
-      "provenance": [],
-      "authorship_tag": "ABX9TyMBbsq6VvV3Q00WRs78fVmO",
-      "include_colab_link": true
-    },
-    "kernelspec": {
-      "name": "python3",
-      "display_name": "Python 3"
-    },
-    "language_info": {
-      "name": "python"
-    }
-  },
-  "cells": [
-    {
-      "cell_type": "markdown",
-      "metadata": {
-        "id": "view-in-github",
-        "colab_type": "text"
-      },
-      "source": [
-        "<a href=\"https://colab.research.google.com/github/katarzynali/kurs-git-1/blob/main/kasiazad_py.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "def utworz_nowe_id(zadania:str):                  #Tworzy nową funkcje o nazwie utworz_nowe_id.\n",
-        "    if not zadania:                               #Sprawdza, czy lista zadań (zadania) jest pusta.\n",
-        "                                                  #Jeśli nie ma żadnych zadań na liście (wartość zadania jest \"fałszywa\", czyli pusta), to warunek jest spełniony.\n",
-        "        ID = 1                                    #Ustawia zmienną ID na wartość 1.\n",
-        "                                                  #Ponieważ lista była pusta, nowe zadanie będzie pierwszym, więc dostaje ID równe 1.\n",
-        "    else: ID = len(zadania)+1                     #Ta linijka wykonuje się tylko wtedy, gdy lista NIE była pusta.Funkcja wykonuje to w kilku krokach:\n",
-        "                                                  #len(zadania): Liczy, ile zadań jest aktualnie na liście,\n",
-        "                                                  #... + 1: Dodaje 1 do tej liczby,\n",
-        "                                                  #ID = ...: Przypisuje ten wynik do zmiennej ID.\n",
-        "                                                  #Nowe ID będzie równe liczbie elementów na liście plus jeden. Na przykład, jeśli na liście są 3 zadania, nowe ID będzie wynosić 3 + 1 = 4."
-      ],
-      "metadata": {
-        "id": "dULKMse79VW4"
-      },
-      "execution_count": 7,
-      "outputs": []
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "def dodaj_zadanie(zadania:str, nazwa:str, osoba:str):         #Tworzy nową funkcje o nazwie dodaj_zadanie\n",
-        "    zad_id = utworz_nowe_id(zadania)                          #Funkcja ta dostaje listę zadania, żeby sprawdzić, jakie numery są już zajęte.\n",
-        "\n",
-        "    zadania.append({                                          #Rozpoczyna dodawanie nowego elementu na koniec listy o nazwie lista. Nowym elementem będzie słownik.\n",
-        "        \"ID\": zad_id,                                         #Dodaje do słownika parę: Klucz to \"ID\", a Wartość to tekst (ciąg znaków) \"zad_id\".\n",
-        "        \"nazwa\" : nazwa,                                      #Dodaje do słownika parę: Klucz to \"nazwa\", a Wartość to to, co jest przechowywane w zmiennej o nazwie nazwa.\n",
-        "        \"osoba\": osoba,                                       #Dodaje do słownika parę: Klucz to \"osoba\", a Wartość to to, co jest przechowywane w zmiennej o nazwie osoba.\n",
-        "        \"status\": 0                                           #Dodaje do słownika parę: Klucz to \"status\", a Wartość to liczba 0.\n",
-        "})\n",
-        ""
-      ],
-      "metadata": {
-        "id": "sgLpbTsCGlik"
-      },
-      "execution_count": null,
-      "outputs": []
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "def usun_zadanie(zadania, zad_id):              #Tworzy funkcję do usuwania. Potrzebuje listy zadań i numeru ID do usunięcia.\n",
-        "\n",
-        "     for i, zad in enumerate(zadania):          #Przegląda listę zadań, biorąc po kolei każde zadanie (zad) wraz z jego numerem pozycji (i).\n",
-        "        if zad[\"zadID\"] == zad_id:              #Sprawdza: Czy numer ID aktualnego zadania jest taki sam jak numer ID, który chcemy usunąć.\n",
-        "            del zadania[i]                      #Usuwa słownik z listy\n",
-        "\n"
-      ],
-      "metadata": {
-        "id": "c-uLJKe7MHpw"
-      },
-      "execution_count": 10,
-      "outputs": []
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "def zmien_status_zadania(zadania, zad_id, nowy_status):     #Tworzy funkcję do zmiany statusu. Potrzebuje: listy zadań, numeru ID zadania do znalezienia i nowego statusu (0 lub 1).                                                   #Rozpoczyna ostrożne działanie. Mówi: \"Spróbuj to wykonać i bądź gotowy na ewentualne błędy.\"\n",
-        "\n",
-        "        if not 0 <= nowy_status <= 1:                       #Sprawdza warunek: Jeśli nowy status nie jest ani 0, ani 1...\n",
-        "            return                                          #To przerywa działanie funkcji i nic nie robi (bo podano nieprawidłowy status).\n",
-        "\n",
-        "        for zadanie in zadania:                             #Przegląda listę zadań po kolei. W każdej rundzie pętli zadanie to jedno zadanie z listy.\n",
-        "            if zadanie['ID'] == zad_id:                     #Sprawdza warunek: Jeśli numer ID tego zadania jest taki sam, jak numer, którego szukamy...\n",
-        "                zadanie['status'] = nowy_status             #To zmienia wartość pod kluczem 'status' w tym zadaniu na nowy_status.\n",
-        "\n",
-        "\n",
-        "\n"
-      ],
-      "metadata": {
-        "id": "1JD3WfgNXe0N"
-      },
-      "execution_count": null,
-      "outputs": []
-    }
-  ]
-}
+def utworz_nowe_id(zadania:str):                  #Tworzy nową funkcje o nazwie utworz_nowe_id.
+    if not zadania:                               #Sprawdza, czy lista zadań (zadania) jest pusta.
+                                                  #Jeśli nie ma żadnych zadań na liście (wartość zadania jest "fałszywa", czyli pusta), to warunek jest spełniony.
+        ID = 1                                    #Ustawia zmienną ID na wartość 1.
+                                                  #Ponieważ lista była pusta, nowe zadanie będzie pierwszym, więc dostaje ID równe 1.
+    else: ID = len(zadania)+1                     #Ta linijka wykonuje się tylko wtedy, gdy lista NIE była pusta.Funkcja wykonuje to w kilku krokach:
+                                                  #len(zadania): Liczy, ile zadań jest aktualnie na liście,
+                                                  #... + 1: Dodaje 1 do tej liczby,
+                                                  #ID = ...: Przypisuje ten wynik do zmiennej ID.
+                                                  #Nowe ID będzie równe liczbie elementów na liście plus jeden. Na przykład, jeśli na liście są 3 zadania, nowe ID będzie wynosić 3 + 1 = 4.
+
+def dodaj_zadanie(zadania:str, nazwa:str, osoba:str):         #Tworzy nową funkcje o nazwie dodaj_zadanie
+    zad_id = utworz_nowe_id(zadania)                          #Funkcja ta dostaje listę zadania, żeby sprawdzić, jakie numery są już zajęte.
+
+    zadania.append({                                          #Rozpoczyna dodawanie nowego elementu na koniec listy o nazwie lista. Nowym elementem będzie słownik.
+        "ID": zad_id,                                         #Dodaje do słownika parę: Klucz to "ID", a Wartość to tekst (ciąg znaków) "zad_id".
+        "nazwa" : nazwa,                                      #Dodaje do słownika parę: Klucz to "nazwa", a Wartość to to, co jest przechowywane w zmiennej o nazwie nazwa.
+        "osoba": osoba,                                       #Dodaje do słownika parę: Klucz to "osoba", a Wartość to to, co jest przechowywane w zmiennej o nazwie osoba.
+        "status": 0                                           #Dodaje do słownika parę: Klucz to "status", a Wartość to liczba 0.
+})
+
+def usun_zadanie(zadania, zad_id):              #Tworzy funkcję do usuwania. Potrzebuje listy zadań i numeru ID do usunięcia.
+
+     for i, zad in enumerate(zadania):          #Przegląda listę zadań, biorąc po kolei każde zadanie (zad) wraz z jego numerem pozycji (i).
+        if zad["zadID"] == zad_id:              #Sprawdza: Czy numer ID aktualnego zadania jest taki sam jak numer ID, który chcemy usunąć.
+            del zadania[i]                      #Usuwa słownik z listy
+
+def zmien_status_zadania(zadania, zad_id, nowy_status):     #Tworzy funkcję do zmiany statusu. Potrzebuje: listy zadań, numeru ID zadania do znalezienia i nowego statusu (0 lub 1).                                                   #Rozpoczyna ostrożne działanie. Mówi: "Spróbuj to wykonać i bądź gotowy na ewentualne błędy."
+
+        if not 0 <= nowy_status <= 1:                       #Sprawdza warunek: Jeśli nowy status nie jest ani 0, ani 1...
+            return                                          #To przerywa działanie funkcji i nic nie robi (bo podano nieprawidłowy status).
+
+        for zadanie in zadania:                             #Przegląda listę zadań po kolei. W każdej rundzie pętli zadanie to jedno zadanie z listy.
+            if zadanie['ID'] == zad_id:                     #Sprawdza warunek: Jeśli numer ID tego zadania jest taki sam, jak numer, którego szukamy...
+                zadanie['status'] = nowy_status             #To zmienia wartość pod kluczem 'status' w tym zadaniu na nowy_status.
